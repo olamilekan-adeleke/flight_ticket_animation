@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../widgets/flight_widget/travel_title_and_logo_widget.dart';
 import '../widgets/sizer_box_helper.dart';
 
 class TicketView extends StatelessWidget {
@@ -30,4 +31,3 @@ class TicketView extends StatelessWidget {
     );
   }
 }
-
