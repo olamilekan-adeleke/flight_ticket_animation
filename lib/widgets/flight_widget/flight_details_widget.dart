@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../dash_line_widget.dart';
 import '../sizer_box_helper.dart';
+import 'flight_path_icon_widget.dart';
 
 class TravelDetailsWidget extends StatefulWidget {
   const TravelDetailsWidget({Key? key}) : super(key: key);
@@ -66,7 +67,7 @@ class _TravelDetailsWidgetState extends State<TravelDetailsWidget>
                           opacity: _fadeAnimation,
                           child: locationTextWidget('ABV', 'Abuja'),
                         ),
-                        flightPathIcon(),
+                        const FlightPathIconWidget(),
                         FadeTransition(
                           opacity: _fadeAnimation,
                           child: locationTextWidget('LHR', 'London'),
@@ -123,61 +124,6 @@ class _TravelDetailsWidgetState extends State<TravelDetailsWidget>
           ],
         );
       },
-    );
-  }
-
-  Widget flightPathIcon() {
-    return SizedBox(
-      width: 0.50.sw,
-      child: Stack(
-        alignment: AlignmentDirectional.center,
-        children: [
-          SizedBox(
-            width: 0.50.sw,
-            child: Row(
-              children: [
-                Container(
-                  height: 5.h,
-                  width: 5.w,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: const Color(0xff808899)),
-                  ),
-                ),
-                const DashedLine(
-                  direction: Axis.horizontal,
-                  dashWidth: 10.0,
-                  height: 1,
-                  color: Color(0xffCCCFD6),
-                ),
-                Container(
-                  height: 5.h,
-                  width: 5.w,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: const Color(0xff808899)),
-                  ),
-                )
-              ],
-            ),
-          ),
-          Container(
-            height: 34.h,
-            width: 34.w,
-            decoration: const BoxDecoration(
-              color: Color(0xff141D3E),
-              shape: BoxShape.circle,
-            ),
-            child: Center(
-              child: SvgPicture.asset(
-                'assets/flight_icon.svg',
-                width: 10.42.w,
-                height: 11.33.h,
-              ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 
