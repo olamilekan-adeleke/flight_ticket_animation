@@ -59,6 +59,7 @@ class _TravelDetailsWidgetState extends State<TravelDetailsWidget>
               itemCount: 1,
               itemBuilder: (_, int index) {
                 return Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -74,8 +75,9 @@ class _TravelDetailsWidgetState extends State<TravelDetailsWidget>
                         ),
                       ],
                     ),
-                    const H(height: 15),
+                    const H(height: 20),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         FadeTransition(
                           opacity: _fadeAnimation,
@@ -148,29 +150,27 @@ class _TravelDetailsWidgetState extends State<TravelDetailsWidget>
   }
 
   Widget boardingTextWidget(String abb, String text, [bool isRed = false]) {
-    return Expanded(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            abb,
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: isRed ? const Color(0xffB71E2F) : const Color(0xff667085),
-            ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          abb,
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: isRed ? const Color(0xffB71E2F) : const Color(0xff667085),
           ),
-          Text(
-            text,
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: isRed ? const Color(0xffB71E2F) : null,
-            ),
+        ),
+        Text(
+          text,
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            color: isRed ? const Color(0xffB71E2F) : null,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
