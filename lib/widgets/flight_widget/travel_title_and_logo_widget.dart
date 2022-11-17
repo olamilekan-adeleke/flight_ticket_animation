@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../sizer_box_helper.dart';
 
@@ -10,8 +9,10 @@ class TravelTitleAndLogoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SvgPicture.network('assets/logo.svg', height: 50.h, width: 50.w),
+        Image.asset('assets/logo.png', height: 42.h, width: 200.w),
         const H(height: 20),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,7 +31,6 @@ class TravelTitleAndLogoWidget extends StatelessWidget {
             ),
           ],
         ),
-        const H(height: 48),
       ],
     );
   }
